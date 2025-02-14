@@ -1,32 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
-
-import Home from "./pages/Home";
-import TrizzoneLogo from "./components/TrizzoneLogo";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoadingScreen from "./components/loading";
+import Home from "./pages/Home";
+import Logo from "./components/TrizzoneLogo";
 import Header from "./components/header";
 
-
-
-export default function App() {
-  const [loading, setLoading] = useState(true);
-  
+function App() {
   return (
-    <div>
-      {loading ? (
-        <LoadingScreen onComplete={() => setLoading(false)} />
-      ) : (
-      
-        <>
-        <Header />
-          <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/logo" element={<TrizzoneLogo/>} />
-          
-          </Routes>
+
+      <Routes>
+        <Route path="/" element={<LoadingScreen />}>
+          <Route index element={<Home />} />
+          <Route path="logo" element={<Logo />} />
+        </Route>
+      </Routes>
+
+  
    
-        </>
-  )}
-    </div>
   );
 }
+
+export default App;

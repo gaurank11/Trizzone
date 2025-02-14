@@ -7,15 +7,17 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-md p-5 flex justify-between items-center z-50">
+    <header className="fixed top-0 left-0 w-full bg-transparent shadow-md p-5 flex justify-between items-center z-50">
       {/* Logo */}
       <Link to="/">
-        <img src="/trizzone_logo.jpeg" alt="Logo" className="h-12 w-auto" />
+        <img src="/trizzone_logo.png" alt="Logo" className="h-12 w-auto" style={{
+      filter: "invert(1)",
+    }}/>
       </Link>
 
       {/* Burger Menu Button */}
       <button onClick={() => setMenuOpen(true)}>
-        <Bars3Icon className="w-8 h-8 text-black" />
+        <Bars3Icon className="w-8 h-8 text-white" />
       </button>
 
       {/* Menu (Mobile) */}
