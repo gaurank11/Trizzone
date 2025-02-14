@@ -68,7 +68,6 @@ const LoadingScreen = ({ onComplete }) => {
             <motion.div
               className="absolute top-0 left-0 w-full h-full flex items-center justify-center"
               initial={{ clipPath: "polygon(70px 300px, 200px 80px, 280px 300px)" }}
-              animate={{ clipPath: "polygon(0% 100%, 50% 0%, 100% 100%)", scale: 1.2 }}
               transition={{ duration: 1.5 }}
             >
               <Outlet />

@@ -30,11 +30,11 @@ function Hero() {
       />
 
       {/* Left Side Buttons */}
-      <div className="absolute left-12 bottom-1/4 flex flex-row space-x-4">
+      <div className="absolute right-8 md:left-12 bottom-28 md:bottom-1/4 flex flex-row  md:space-x-4">
         {["Architectures", "Interiors", "Landscape"].map((text, index) => (
           <button
             key={index}
-            className="px-6 py-2  text-white text-lg font-semibold rounded-md hover:text-gray-400 transition duration-300"
+            className="px-3 md:px-6 py-1 md:py-2  text-white text-sm md:text-lg font-semibold rounded-md hover:text-gray-400 transition duration-300"
           >
             {text}
           </button>
@@ -47,7 +47,7 @@ function Hero() {
       </div>
 
       {/* Right Side Big "TRIZZONE" */}
-      <div className="absolute right-12 bottom-1/4 text-white text-7xl font-bold uppercase">
+      <div className="absolute right-12 bottom-1/4 text-white text-5xl md:text-7xl font-bold uppercase">
         TRIZZONE
       </div>
     </div>
