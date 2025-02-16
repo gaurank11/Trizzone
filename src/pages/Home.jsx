@@ -9,8 +9,10 @@ const Home = () => {
     <Header />
     <div className=" overflow-x-hidden w-full">
     <Hero />
-    <PropertiesPage />
+
     </div>
+
+    <PropertiesPage />
     </>
   )
 }
