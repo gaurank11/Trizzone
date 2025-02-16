@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function Hero() {
   const images = ["/h1.jpg", "/h2.jpg", "/h3.jpg"];
@@ -8,6 +9,7 @@ function Hero() {
     "Simplicity is the ultimate sophistication.",
   ];
 
+  const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
 
@@ -34,9 +36,11 @@ function Hero() {
         {["Architectures", "Interiors", "Landscape"].map((text, index) => (
           <button
             key={index}
+            onClick= {() => navigate('/properties')}
             className="px-3 md:px-6 py-1 md:py-2  text-white text-sm md:text-lg font-semibold rounded-md hover:text-gray-400 transition duration-300"
           >
             {text}
+
           </button>
         ))}
       </div>

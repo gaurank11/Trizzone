@@ -3,6 +3,7 @@ import LoadingScreen from "./components/loading";
 import Home from "./pages/Home";
 import Logo from "./components/TrizzoneLogo";
 import Header from "./components/header";
+import PropertiesPage from "./components/properties";
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
         <Route path="/" element={<LoadingScreen />}>
           <Route index element={<Home />} />
           <Route path="logo" element={<Logo />} />
+          <Route path="properties" element={<PropertiesPage />} />
+
         </Route>
       </Routes>
 
