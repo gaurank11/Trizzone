@@ -17,7 +17,7 @@ const Hero1 = () => {
 
       {/* Content */}
       <div className="relative text-center px-4">
-        <h1 className="text-3xl md:text-7xl font-bold uppercase">
+        <h1 className="text-2xl md:text-7xl font-bold uppercase">
           Good Designs Take Time. <br /> Great Ones Take a Little Longer!
         </h1>
         
