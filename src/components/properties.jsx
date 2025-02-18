@@ -21,29 +21,30 @@ const PropertiesPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white text-gray-900 ">
       {/* Header Section */}
       <header className="bg-white-200 py-6 px-8">
         <h1 className="text-3xl font-bold text-black">Architecture</h1>
       </header>
 
       {/* Properties Grid */}
-      <div className="px-5 grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
+      <div className="px-5 grid grid-cols-2 md:grid-cols-4 gap-0.5 mt-12 md:pl-96 md:pr-52 pr-12 ">
         {properties.map((property, index) => (
-          <div key={index} className="relative group cursor-pointer bg-white shadow-md rounded-lg overflow-hidden">
+          <div key={index} className="relative group cursor-pointer bg-white shadow-md-lg overflow-hidden">
             {/* Image with Grayscale Hover Effect */}
             <img
               src={property.img}
               alt={property.name}
-              className="w-full h-40 object-cover filter grayscale transition duration-300 group-hover:grayscale-0"
+              className="w-full h-28 object-cover filter grayscale transition duration-300 group-hover:grayscale-0"
             />
             {/* Details */}
             <div className="p-4">
-              <p className="text-lg font-bold text-gray-800">{property.name}</p>
-              <p className="text-sm text-gray-600">{property.price}</p>
-              <button className="mt-3 px-4 py-2 bg-blue-950 text-white font-semibold rounded-md w-full hover:bg-blue-800 transition">
-                View Details
-              </button>
+              <p className="text-md md:text-lg  text-gray-800">SOORRI NISEKO</p>
+
+              <p className="text-sm font-ś text-gray-800">Niseko</p>
+<br>
+</br>
+              <p className="text-sm text-gray-600">Hospitality, Interiors, Pools, SCDA, Soori</p>
             </div>
           </div>
         ))}
@@ -53,3 +54,8 @@ const PropertiesPage = () => {
 };
 
 export default PropertiesPage;
+
+
+
+
+// col-sm-153 col-lg-153 col-md-153
