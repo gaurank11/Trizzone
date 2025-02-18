@@ -32,7 +32,7 @@ const Hero1 = () => {
         {/* Email Button */}
         <a
           href="mailto:vmehra@trizzone.com?subject=Interested in Updates&body=Hi, I would like to receive updates about Trizzone!"
-          className="mt-6 inline-block px-6 py-3 bg-gray-500 hover:bg-gray-700 text-white uppercase text-sm tracking-wide"
+          className="mt-6 inline-block px-6 py-3 bg-gray-500 hover:bg-gray-700 text-white uppercase  text-[11px] md:text-sm tracking-wide"
         >
           Be the First to Know!
         </a>
