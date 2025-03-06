@@ -1,27 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LoadingScreen from "./components/loading";
+import Loader from "./components/loading";
 import Home from "./pages/Home";
-import Logo from "./components/TrizzoneLogo";
-import Header from "./components/header";
 import PropertiesPage from "./components/properties";
-import Hero1 from "./components/hero1";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
-
+   
       <Routes>
-
-        <Route path="/" element={<Hero1/>}>   
-        {/* <Route path="/" element={<LoadingScreen />}> */}
-          {/* <Route index element={<Home />} />
-          <Route path="logo" element={<Logo />} />
-          <Route path="properties" element={<PropertiesPage />} /> */}
-
-        </Route>
+        {/* Show Loader initially and navigate to Home */}
+        <Route path="/" element={<Loader />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/properties" element={<PropertiesPage />} />
+        <Route path="/contact" element={<Contact/>} />
       </Routes>
 
-  
-   
   );
 }
 

@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 
 const PropertiesPage = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 200); // Adds slight animation delay
+  }, []);
+
   const properties = [
-    { img: "https://raw.githubusercontent.com/potterzwhealrealty/photos/main/Krisumi_Homepage.png", name: "KRISUMI PROPERTIES", price: "$500,000" },
-    { img: "https://raw.githubusercontent.com/potterzwhealrealty/photos/main/mvn/overview_img.jpg", name: "MVN PROPERTIES", price: "$750,000" },
-    { img: "https://raw.githubusercontent.com/potterzwhealrealty/photos/main/trevoc/t_home.png", name: "TREVOC PROPERTIES", price: "$600,000" },
-    { img: "https://raw.githubusercontent.com/potterzwhealrealty/photos/main/ss_camasa/ss_homepage.png", name: "SS CAMASA", price: "$550,000" },
-    { img: "https://raw.githubusercontent.com/potterzwhealrealty/photos/main/sobha_altus/sobha_home.jpeg", name: "SOBHA ALTUS", price: "$800,000" },
+    { img: "https://raw.githubusercontent.com/potterzwhealrealty/photos/main/Krisumi_Homepage.webp", name: "KRISUMI PROPERTIES", price: "$500,000" },
+    { img: "https://raw.githubusercontent.com/potterzwhealrealty/photos/main/trevoc/t_home.webp", name: "TREVOC PROPERTIES", price: "$600,000" },
+    { img: "https://raw.githubusercontent.com/potterzwhealrealty/photos/main/ss_camasa/ss_homepage.webp", name: "SS CAMASA", price: "$550,000" },
+    { img: "https://raw.githubusercontent.com/potterzwhealrealty/photos/main/sobha_altus/sobha_home.webp", name: "SOBHA ALTUS", price: "$800,000" },
     { img: "https://raw.githubusercontent.com/potterzwhealrealty/photos/main/Eldico/eldico_overview.webp", name: "ELDECO RESERVE", price: "$900,000" },
     { img: "https://images.squarespace-cdn.com/content/v1/58487dc4b8a79b6d02499b60/1649818878171-HXGSYXD0JI23307551QB/Francis+York+One+of+the+Most+Beautiful+Homes+For+Sale+in+Illinois+6.jpeg", name: "FRANCIS YORK", price: "$1,200,000" },
     { img: "https://cdn.pixabay.com/photo/2018/02/13/11/09/home-3150500_1280.jpg", name: "EXAMPLE PROPERTY 1", price: "$400,000" },
@@ -21,41 +28,38 @@ const PropertiesPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 ">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Header Section */}
-      <header className="bg-white-200 py-6 px-8">
+      <header className="bg-gray-200 py-6 px-8">
         <h1 className="text-3xl font-bold text-black">Architecture</h1>
       </header>
 
       {/* Properties Grid */}
-      <div className="px-5 grid grid-cols-2 md:grid-cols-4 gap-0.5 mt-12 md:pl-96 md:pr-52 pr-12 ">
-        {properties.map((property, index) => (
-          <div key={index} className="relative group cursor-pointer bg-white shadow-md-lg overflow-hidden">
-            {/* Image with Grayscale Hover Effect */}
-            <img
-              src={property.img}
-              alt={property.name}
-              className="w-full h-28 object-cover filter grayscale transition duration-300 group-hover:grayscale-0"
-            />
-            {/* Details */}
-            <div className="p-4">
-              <p className="text-md md:text-lg  text-gray-800">SOORRI NISEKO</p>
-
-              <p className="text-sm font-ś text-gray-800">Niseko</p>
-<br>
-</br>
-              <p className="text-sm text-gray-600">Hospitality, Interiors, Pools, SCDA, Soori</p>
+      <div
+        className={`relative z-10 bg-white p-10 transition-all duration-1000 ease-in-out ${
+          isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-50"
+        }`}
+      >
+        <div className="px-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-4 mt-12 md:pl-96 md:pr-52 pr-12 ">
+          {properties.map((property, index) => (
+            <div key={index} className="relative group cursor-pointer bg-white shadow-lg rounded-lg overflow-hidden">
+              {/* Image */}
+              <img
+                src={property.img}
+                alt={property.name}
+                className="w-full h-40 object-cover rounded-t-lg"
+              />
+              {/* Hover Effect */}
+              <div className="absolute inset-0 bg-gradient-to-t from-green-800/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col justify-end p-4">
+                <p className="text-white text-lg font-bold">{property.name}</p>
+                <p className="text-white text-sm">{property.price}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
 export default PropertiesPage;
-
-
-
-
-// col-sm-153 col-lg-153 col-md-153
