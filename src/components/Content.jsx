@@ -54,7 +54,7 @@ const Content = () => {
 
         {/* Contact Form */}
         <div className="bg-white p-8 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105">
-          <h2 className="text-3xl font-bold text-sky-700 mb-6">Let's Get in Touch</h2>
+          <h2 className="text-3xl font-bold text-black mb-6">Let's Get in Touch</h2>
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
             
             {["name", "email"].map((field) => (
@@ -90,7 +90,7 @@ const Content = () => {
 
             <textarea name="message" placeholder="Message" value={formData.message} onChange={handleChange} className="w-full border p-3 rounded-md" required />
 
-            <button type="submit" className="w-full bg-sky-700 text-white p-3 rounded-md hover:bg-sky-600">
+            <button type="submit" className="w-full bg-black text-white p-3 rounded-md hover:bg-gray-900">
               Send Message
             </button>
           </form>
